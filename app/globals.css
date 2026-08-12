@@ -107,7 +107,13 @@ section[id], article[id], footer[id] { scroll-margin-top: 96px; }
 .hero h1 em, .hero h1 strong { display: block; font-weight: 400; font-style: normal; }
 .hero h1 em { color: #ff4757; }
 .hero h1 strong { color: #75a7ff; }
-.hero-copy > p { max-width: 650px; margin: 0; color: #c2d2e4; font-size: 16px; line-height: 1.72; text-wrap: pretty; }
+.hero-thesis { max-width: 610px; }
+.hero-thesis > p { margin: 0; color: #c2d2e4; font-size: 17px; line-height: 1.55; text-wrap: balance; }
+.hero-thesis > p strong { display: block; margin-top: 2px; color: white; font-family: var(--serif); font-size: 22px; font-weight: 400; letter-spacing: -.015em; }
+.hero-value-chain { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; align-items: center; gap: 9px; margin-top: 18px; padding: 13px 14px; border: 1px solid rgba(139,177,219,.3); border-radius: 10px; background: rgba(4,20,40,.58); backdrop-filter: blur(12px); }
+.hero-value-chain span { display: flex; align-items: center; gap: 7px; color: #c8d8e9; font: 650 7px/1.35 var(--mono); letter-spacing: .035em; }
+.hero-value-chain small { width: 22px; height: 22px; flex: 0 0 auto; display: grid; place-items: center; border-radius: 6px; color: #9fc3f4; background: rgba(47,102,177,.28); font-size: 6px; }
+.hero-value-chain i { width: 18px; height: 1px; background: linear-gradient(90deg,#5d7fa7,var(--red)); }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
 .button-ghost { color: white; border-color: rgba(184,211,242,.42); background: rgba(5,24,48,.56); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); backdrop-filter: blur(12px); }
 .button-ghost:hover { border-color: rgba(255,255,255,.72); background: rgba(12,42,76,.82); }
@@ -481,7 +487,10 @@ section[id], article[id], footer[id] { scroll-margin-top: 96px; }
   .signal-strip span:nth-of-type(n+3), .signal-strip i:nth-of-type(n+2) { display: none; }
   .hero { min-height: auto; padding: 58px 18px 285px; }
   .hero h1 { font-size: clamp(48px,14vw,68px); }
-  .hero-copy > p { font-size: 14px; }
+  .hero-thesis > p { font-size: 14px; }
+  .hero-thesis > p strong { font-size: 19px; }
+  .hero-value-chain { grid-template-columns: 1fr; gap: 6px; }
+  .hero-value-chain i { display: none; }
   .hero-actions, .hero-actions .button { width: 100%; }
   .hero-proof-rail { min-height: 255px; grid-template-columns: 1fr 1fr; padding: 0 18px; }
   .hero-proof-rail > div { min-height: 118px; padding: 16px 14px; border-bottom: 1px solid rgba(132,169,211,.2); }

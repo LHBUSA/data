@@ -163,7 +163,14 @@ export default function Home() {
         <div className="hero-copy">
           <div className="hero-kicker"><span><i /> CUSTOM DATA, BUILT DIRECT</span> REAL ESTATE + SPORTS</div>
           <h1 id="hero-title">Hard-to-source data,<em>engineered into</em><strong>your advantage.</strong></h1>
-          <p>We design custom real-estate and sports data products around the exact decision your application needs to make—then own the sourcing, identity, enrichment, validation, and delivery behind it.</p>
+          <div className="hero-thesis">
+            <p>Bring us the decision. <strong>We engineer the data product behind it.</strong></p>
+            <div className="hero-value-chain" aria-label="Source, resolve, and ship the data contract">
+              <span><small>01</small>Source the hard records</span><i aria-hidden="true" />
+              <span><small>02</small>Resolve the identity</span><i aria-hidden="true" />
+              <span><small>03</small>Ship your contract</span>
+            </div>
+          </div>
           <div className="hero-actions">
             <a className="button button-red button-large" href="#contact">Design the solution <ArrowIcon /></a>
             <a className="button button-ghost button-large" href={links.calendly}>Book a working session <span>↗</span></a>
