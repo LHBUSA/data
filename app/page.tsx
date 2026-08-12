@@ -1,3 +1,8 @@
+import Image from "next/image";
+import heroImage from "../public/images/data-hero.webp";
+import integrationTeamImage from "../public/images/integration-team.webp";
+import propertyImage from "../public/images/property-intelligence.webp";
+import sportsImage from "../public/images/sports-intelligence.webp";
 import { ArrowIcon, Brand, CheckIcon, ProductShield } from "./components/Brand";
 import Header from "./components/Header";
 import IntakeForm from "./components/IntakeForm";
@@ -144,58 +149,96 @@ export default function Home() {
         <span>DIRECT INFRASTRUCTURE</span>
       </div>
 
-      <section className="hero">
+      <section className="hero" aria-labelledby="hero-title">
+        <Image
+          className="hero-image"
+          src={heroImage}
+          alt="A blue-hour American city, residential neighborhoods, and an illuminated baseball stadium"
+          fill
+          priority
+          placeholder="blur"
+          sizes="100vw"
+        />
+        <div className="hero-scrim" aria-hidden="true" />
         <div className="hero-copy">
-          <div className="hero-kicker"><span><i /> INDEPENDENT DATA INFRASTRUCTURE</span> REAL ESTATE + SPORTS</div>
-          <h1>Your data product,<em>engineered around</em><strong>the outcome.</strong></h1>
-          <p>Bring us the response you wish existed. We source, normalize, resolve, enrich, and deliver the exact real-estate or sports intelligence your product needs—without forcing your roadmap into someone else&apos;s API.</p>
+          <div className="hero-kicker"><span><i /> CUSTOM DATA, BUILT DIRECT</span> REAL ESTATE + SPORTS</div>
+          <h1 id="hero-title">Hard-to-source data,<em>engineered into</em><strong>your advantage.</strong></h1>
+          <p>We design custom real-estate and sports data products around the exact decision your application needs to make—then own the sourcing, identity, enrichment, validation, and delivery behind it.</p>
           <div className="hero-actions">
-            <a className="button button-red button-large" href="#contact">Design your data solution <ArrowIcon /></a>
-            <a className="button button-outline button-large" href={links.calendly}>Book an integration <span>↗</span></a>
+            <a className="button button-red button-large" href="#contact">Design the solution <ArrowIcon /></a>
+            <a className="button button-ghost button-large" href={links.calendly}>Book a working session <span>↗</span></a>
           </div>
           <div className="hero-assurance">
-            <span><CheckIcon /> Customer-specific contracts</span>
-            <span><CheckIcon /> Source-aware delivery</span>
-            <span><CheckIcon /> Built for production</span>
-          </div>
-          <div className="hero-metrics">
-            <div><strong>166M+</strong><span>INDEXED U.S. PARCELS</span></div>
-            <div><strong>50</strong><span>STATE PROPERTY COVERAGE</span></div>
-            <div><strong>LIVE</strong><span>SPORTS + MARKET SIGNALS</span></div>
-            <div><strong>ONE</strong><span>CUSTOM RESPONSE CONTRACT</span></div>
+            <span><CheckIcon /> Senior technical discovery</span>
+            <span><CheckIcon /> Source-aware contracts</span>
+            <span><CheckIcon /> Production ownership</span>
           </div>
         </div>
-        <div className="hero-lab"><SolutionLab /></div>
+        <div className="hero-lab">
+          <div className="hero-lab-heading"><span><i /> LIVE SOLUTION ARCHITECT</span><b>INTERACTIVE / 01</b></div>
+          <SolutionLab />
+        </div>
+        <div className="hero-proof-rail">
+          <div><strong>166M+</strong><span>INDEXED U.S. PARCELS</span></div>
+          <div><strong>50</strong><span>STATE PROPERTY COVERAGE</span></div>
+          <div><strong>LIVE</strong><span>SPORTS + MARKET SIGNALS</span></div>
+          <div><strong>ONE</strong><span>ACCOUNTABLE DATA CONTRACT</span></div>
+          <div className="hero-proof-note"><i /> DIRECT INFRASTRUCTURE · BUILT IN THE USA</div>
+        </div>
       </section>
 
-      <section className="statement-section" id="solutions">
-        <div className="statement-index"><span>PROPTECHUSA.AI</span><b>DATA SOLUTIONS / 001</b></div>
-        <div className="statement-copy">
-          <p>Most data vendors sell a catalog.</p>
-          <h2>We build the <em>data product</em> between your idea and the decision.</h2>
-          <div className="statement-foot">
-            <p>One accountable team across sourcing, identity, normalization, intelligence, delivery, QA, and the interface your customers see.</p>
-            <a href="#architecture">See the operating model <ArrowIcon /></a>
+      <section className="studio-section" id="solutions" aria-labelledby="studio-title">
+        <div className="studio-image">
+          <Image
+            src={integrationTeamImage}
+            alt="A senior data product team collaborating on property and sports data systems"
+            fill
+            placeholder="blur"
+            sizes="(max-width: 900px) 100vw, 52vw"
+          />
+          <div className="studio-image-shade" aria-hidden="true" />
+          <div className="studio-caption">
+            <span><i /> DELIVERY ROOM</span>
+            <b>Source plan → data contract → production system</b>
+          </div>
+          <div className="studio-status"><i /> SENIOR TEAM ENGAGED</div>
+        </div>
+        <div className="studio-copy">
+          <div className="statement-index"><span>PROPTECHUSA.AI</span><b>DATA SOLUTIONS / 001</b></div>
+          <span className="section-kicker red"><i /> MORE THAN AN ENDPOINT</span>
+          <h2 id="studio-title">Not another catalog. <em>Your data engineering partner.</em></h2>
+          <p>One accountable team works backward from the customer experience you need to ship. We own the fragmented sources, hard identity problems, edge cases, QA, and delivery contract between the idea and the decision.</p>
+          <div className="studio-proof-grid">
+            <div><strong>DIRECT</strong><span>Infrastructure and engineering access</span></div>
+            <div><strong>EXACT</strong><span>Customer-specific response contracts</span></div>
+            <div><strong>VISIBLE</strong><span>Lineage, coverage, and validation</span></div>
+            <div><strong>OWNED</strong><span>Launch support and versioned evolution</span></div>
+          </div>
+          <div className="studio-foot">
+            <p>“Start with the JSON, workflow, or customer promise you wish existed. We will engineer backward from there.”</p>
+            <a href="#architecture">See how we build it <ArrowIcon /></a>
           </div>
         </div>
       </section>
 
       <section className="verticals-section">
-        <article className="vertical-card property-card" id="real-estate">
+        <article className="vertical-card property-card" id="real-estate" aria-labelledby="real-estate-title">
           <div className="vertical-card-top">
             <div><ProductShield kind="propdata" /><span>01 / REAL ESTATE</span></div>
             <a href={links.propdata}>Explore PropData <span>↗</span></a>
           </div>
           <div className="vertical-visual property-visual" aria-hidden="true">
-            <div className="parcel-map">
-              <span className="parcel p1" /><span className="parcel p2" /><span className="parcel p3" /><span className="parcel p4" /><span className="parcel p5" />
-              <i className="map-pin">⌖</i>
-              <div className="map-card"><small>CANONICAL PROPERTY</small><b>10548 KENTUCKY AVE S</b><span>98% identity confidence</span></div>
-            </div>
+            <Image src={propertyImage} alt="" fill placeholder="blur" sizes="(max-width: 1050px) 50vw, 50vw" />
+            <div className="visual-vignette" />
+            <span className="parcel-outline parcel-outline-one" />
+            <span className="parcel-outline parcel-outline-two" />
+            <span className="parcel-outline parcel-outline-active" />
+            <div className="photo-index"><span><i /> IDENTITY RESOLVED</span><b>98.4%</b></div>
+            <div className="map-card"><small>CANONICAL PROPERTY</small><b>10548 KENTUCKY AVE S</b><span>Parcel · owner · value · risk · geometry</span></div>
           </div>
           <div className="vertical-card-copy">
             <span className="section-kicker"><i /> PROPERTY INTELLIGENCE</span>
-            <h2>From one property to the intelligence around it.</h2>
+            <h2 id="real-estate-title">From one property to the intelligence around it.</h2>
             <p>Build on a durable identity, then add the public record, economics, risk, and spatial layers your workflow actually uses.</p>
             <div className="capability-list">
               {propertyCapabilities.map(([title, body], index) => (
@@ -205,19 +248,22 @@ export default function Home() {
           </div>
         </article>
 
-        <article className="vertical-card sports-card" id="sports">
+        <article className="vertical-card sports-card" id="sports" aria-labelledby="sports-title">
           <div className="vertical-card-top">
             <div><ProductShield kind="sports" /><span>02 / SPORTS</span></div>
             <a href={links.propsports}>Explore PropSports <span>↗</span></a>
           </div>
           <div className="vertical-visual sports-visual" aria-hidden="true">
-            <div className="score-header"><span>LIVE / MLB</span><b>MIN <em>4</em></b><i>TOP 7</i><b>CLE <em>3</em></b></div>
-            <div className="signal-chart"><span /><span /><span /><span /><span /><span /><span /><span /><i /></div>
-            <div className="market-tape"><span>PLAYER TOTAL BASES <b>1.5</b></span><span>CONSENSUS <b>-112</b></span><span>SIGNAL <b>+8.4%</b></span></div>
+            <Image src={sportsImage} alt="" fill placeholder="blur" sizes="(max-width: 1050px) 50vw, 50vw" />
+            <div className="visual-vignette" />
+            <div className="sports-live-panel">
+              <div className="score-header"><span><i /> LIVE / MLB</span><b>MIN <em>4</em></b><small>TOP 7</small><b>CLE <em>3</em></b></div>
+              <div className="market-tape"><span>PLAYER TOTAL BASES <b>1.5</b></span><span>CONSENSUS <b>-112</b></span><span>SIGNAL <b>+8.4%</b></span></div>
+            </div>
           </div>
           <div className="vertical-card-copy">
             <span className="section-kicker"><i /> SPORTS INTELLIGENCE</span>
-            <h2>From a live event to a product-ready signal.</h2>
+            <h2 id="sports-title">From a live event to a product-ready signal.</h2>
             <p>Unify event, player, performance, market, and context data into a stable feed your application can trust at game speed.</p>
             <div className="capability-list">
               {sportsCapabilities.map(([title, body], index) => (
@@ -228,11 +274,11 @@ export default function Home() {
         </article>
       </section>
 
-      <section className="architecture-section" id="architecture">
+      <section className="architecture-section" id="architecture" aria-labelledby="architecture-title">
         <div className="section-heading section-heading-split light">
           <div>
             <span className="section-kicker"><i /> THE OPERATING MODEL</span>
-            <h2>One pipeline. Every hard part owned.</h2>
+            <h2 id="architecture-title">One pipeline. Every hard part owned.</h2>
           </div>
           <p>Your team gets one accountable contract. We handle the fragmented source systems, identity work, normalization, enrichment, QA, and delivery behind it.</p>
         </div>
@@ -257,11 +303,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="delivery-section" id="delivery">
+      <section className="delivery-section" id="delivery" aria-labelledby="delivery-title">
         <div className="section-heading section-heading-split">
           <div>
             <span className="section-kicker red"><i /> WHAT WE BUILD</span>
-            <h2>Infrastructure where you need it. Invisible where you don&apos;t.</h2>
+            <h2 id="delivery-title">Infrastructure where you need it. Invisible where you don&apos;t.</h2>
           </div>
           <p>Start with an endpoint, a feed, a licensed foundation, or a complete customer experience. Every engagement is designed to survive production.</p>
         </div>
@@ -278,16 +324,32 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="contract-banner">
+      <section className="contract-banner" aria-label="Start from your desired response contract">
         <span>THE BRIEF CAN START THIS SIMPLE</span>
         <blockquote>“Here is the <em>JSON</em> we wish existed.”</blockquote>
         <a className="button button-white button-large" href="#contact">Send us the shape <ArrowIcon /></a>
       </section>
 
-      <section className="outcomes-section">
+      <section className="partnership-section" aria-labelledby="partnership-title">
+        <div className="partnership-heading">
+          <span className="section-kicker red"><i /> THE WORKING RELATIONSHIP</span>
+          <h2 id="partnership-title">Senior data people, in the room with your product.</h2>
+        </div>
+        <div className="partnership-body">
+          <p>This is not a ticket queue or a handoff to a generic implementation layer. Product, data engineering, identity resolution, and delivery design stay connected from first brief through production.</p>
+          <a className="button button-outline button-large" href={links.calendly}>Meet the integration team <ArrowIcon /></a>
+        </div>
+        <div className="partnership-cards">
+          <article><span>01</span><b>WORKING DISCOVERY</b><p>Map the decision, consumer, fields, latency, failure modes, and acceptance test.</p></article>
+          <article><span>02</span><b>VISIBLE CONTRACT</b><p>Review sample payloads, source lineage, coverage realities, and edge-case behavior before build.</p></article>
+          <article><span>03</span><b>PRODUCTION OWNERSHIP</b><p>Launch with observability, version discipline, change communication, and an accountable path forward.</p></article>
+        </div>
+      </section>
+
+      <section className="outcomes-section" aria-labelledby="outcomes-title">
         <div className="section-heading centered">
           <span className="section-kicker"><i /> BUILT AROUND THE OUTCOME</span>
-          <h2>Data your product can act on.</h2>
+          <h2 id="outcomes-title">Data your product can act on.</h2>
           <p>Not a raw feed dropped at your door. A reliable input to the next customer, operational, or investment decision.</p>
         </div>
         <div className="outcome-grid">
@@ -297,10 +359,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="process-section" id="process">
+      <section className="process-section" id="process" aria-labelledby="process-title">
         <div className="process-copy">
           <span className="section-kicker red"><i /> HOW WE ENGAGE</span>
-          <h2>From messy requirement to dependable product.</h2>
+          <h2 id="process-title">From messy requirement to dependable product.</h2>
           <p>We keep the path concrete: the decision, the contract, the acceptance test, then the infrastructure.</p>
           <a href={links.calendly} className="button button-outline button-large">Book a solution design call <ArrowIcon /></a>
         </div>
@@ -311,10 +373,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="network-section" id="network">
+      <section className="network-section" id="network" aria-labelledby="network-title">
         <div className="network-intro">
           <span className="section-kicker"><i /> THE SHIELD NETWORK</span>
-          <h2>Custom work backed by products already in motion.</h2>
+          <h2 id="network-title">Custom work backed by products already in motion.</h2>
           <p>Build on proven property and sports infrastructure, then add the customer-specific intelligence, coverage, delivery, and interface your roadmap requires.</p>
         </div>
         <div className="network-grid">
@@ -325,10 +387,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="contact-section" id="contact">
+      <section className="contact-section" id="contact" aria-labelledby="contact-title">
         <div className="contact-copy">
           <span className="section-kicker"><i /> START THE DATA BRIEF</span>
-          <h2>Tell us the decision. We&apos;ll design the data behind it.</h2>
+          <h2 id="contact-title">Tell us the decision. We&apos;ll design the data behind it.</h2>
           <p>Send an email to start asynchronously, or book an integration call when you&apos;re ready to map sources, scope, and delivery live.</p>
           <div className="contact-paths">
             <a href="mailto:sales@proptechusa.ai?subject=Custom%20data%20solution"><span>01</span><div><small>START WITH EMAIL</small><b>sales@proptechusa.ai</b></div><i>↗</i></a>
@@ -339,10 +401,10 @@ export default function Home() {
         <IntakeForm />
       </section>
 
-      <section className="faq-section" id="faq">
+      <section className="faq-section" id="faq" aria-labelledby="faq-title">
         <div className="faq-heading">
           <span className="section-kicker red"><i /> FREQUENTLY ASKED</span>
-          <h2>The questions before the first call.</h2>
+          <h2 id="faq-title">The questions before the first call.</h2>
           <p>Have a requirement that does not fit the catalog? That is exactly what this page is for.</p>
         </div>
         <div className="faq-list">
@@ -354,10 +416,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="final-cta">
+      <section className="final-cta" aria-labelledby="final-cta-title">
         <div><ProductShield kind="data" /></div>
         <span>PROPTECHUSA.AI CUSTOM DATA SOLUTIONS</span>
-        <h2>The data product your roadmap has been waiting for.</h2>
+        <h2 id="final-cta-title">The data product your roadmap has been waiting for.</h2>
         <p>Real estate or sports. One exact contract. Built for the decision—and the production system behind it.</p>
         <div><a className="button button-red button-large" href="#contact">Start the brief <ArrowIcon /></a><a className="button button-outline button-large" href={links.calendly}>Book an integration <span>↗</span></a></div>
       </section>
