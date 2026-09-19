@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { NetworkAnalytics } from "./NetworkAnalytics";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://data.proptechusa.ai"),
@@ -244,6 +245,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body>
+        <NetworkAnalytics surface="data-solutions" />
         {children}
         <script
           type="application/ld+json"
